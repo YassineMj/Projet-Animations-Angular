@@ -1,0 +1,146 @@
+<link
+  href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+  rel="stylesheet"
+/>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+  crossorigin="anonymous"
+/>
+<div class="background-image">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="card-container">
+          <div class="card shadow">
+            <header style="text-align: center; color: rgb(39, 125, 245)">
+              <img
+                src="../../../assets/images/icon-sinscrire.webp"
+                width="50px"
+                style="margin-top: 10px;"
+                alt=""
+              />
+              Inscrivez-vous
+            </header>
+            <div>
+              <div class="form-group">
+                <div class="input-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="nom"
+                    required
+                    autocomplete="off"
+                    placeholder="Nom complet"
+                  />
+                  <div class="input-group-append">
+                    <span
+                      class="input-group-text"
+                      style="background-color: aliceblue"
+                    >
+                      <i class="fa-solid fa-user"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group">
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    required
+                    autocomplete="off"
+                    name="email"
+                    placeholder="Email"
+                  />
+                  <div class="input-group-append">
+                    <span
+                      class="input-group-text"
+                      style="background-color: aliceblue"
+                    >
+                      <i class="fa-solid fa-envelope"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+                <div class="form-group">
+                <div class="input-group">
+                  <input
+                    type="tel"
+                    class="form-control"
+                    id="tel"
+                    required
+                    autocomplete="off"
+                    placeholder="Téléphone"
+                  />
+                  <div class="input-group-append">
+                    <span
+                      class="input-group-text"
+                      style="background-color: aliceblue"
+                    >
+                      <i class="fa-solid fa-phone"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="class"
+                    required
+                    autocomplete="off"
+                    placeholder="Class"
+                  />
+                  <div class="input-group-append">
+                    <span
+                      class="input-group-text"
+                      style="background-color: aliceblue"
+                    >
+                     <i class="fa-solid fa-building-columns"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="input-group">
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="pass"
+                    required
+                    placeholder="Mot de passe"
+                  />
+                  <div class="input-group-append">
+                    <span
+                      class="input-group-text"
+                      style="background-color: aliceblue"
+                    >
+                      <i class="fa-solid fa-key"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block">
+                  <i class="fa fa-save"></i>  S'inscrire
+                </button>
+              </div>
+            </div>
+            <div class="text-center">
+              <span>Vous n’avez pas de compte? <a routerLink="/sidentifier">Connectez-vous</a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
