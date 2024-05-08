@@ -17,31 +17,26 @@
       style="margin-bottom: 20px; margin-top: 10px"
     >
       <!-- Menu of buttons -->
-      <div class="btn-group" role="group" aria-label="Card Category">
-        <button type="button" class="btn btnA btn-primary mx-2">Science</button>
-
-        <button type="button" class="btn btnA btn-primary mx-2">
-          Technologie
-        </button>
-        <button type="button" class="btn btnA btn-primary mx-2">Arts</button>
-        <button type="button" class="btn btnA btn-primary mx-2">
-          Mathematique
-        </button>
-        <button type="button" class="btn btnA btn-primary mx-2">Langues</button>
+      <div *ngIf="listThemes">
+        <div class="btn-group" role="group" aria-label="Card Category">
+          <button *ngFor="let theme of listThemes" type="button" class="btn btnA btn-primary mx-2" (click)="getAnimations(theme.id)">{{ theme.libelle }}</button>
+        </div>
       </div>
+      
     </div>
 
     <div class="row mg">
-      <div class="col-lg-4 col-md-6 d-flex align-items-stretch shadow">
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch shadow"  *ngFor="let animation of listAnimations">
+        
         <div class="course-item">
           <img
-            src="../../../assets/images/image-acceuil-kitchen2.jpg"
+          [src]="'../../../assets/images/'+animation.pathImage"
             class="img-fluid"
           />
           <div class="course-content">
             <div class="d-flex justify-content-between align-items-center mb-3">
               <p class="category" style="text-decoration: underline">
-                <strong>Mathematique</strong>
+                <strong>{{ animation.theme.libelle }}</strong>
               </p>
               <p
                 class="price"
@@ -52,37 +47,40 @@
                   border-radius: 55px;
                 "
               >
-                Deja reserve
+              {{ isAlreadyReserved(animation.id) ? 'Deja inscrit' : '' }}
               </p>
             </div>
 
             <h3>
               <a
-                ><i class="fa-solid fa-puzzle-piece"></i> Creation du puzzles</a
+                ><i class="fa-solid fa-puzzle-piece"></i> {{ animation.titre }}</a
               >
             </h3>
             <p class="description">
-              Les élèves conçoivent des énigmes mathématiques originales, allant
-              de simples calculs à des défis logiques plus complexes.
+              {{ animation.description }}
             </p>
             <hr />
             <p class="description">
-              <i class="fa-solid fa-map-pin"></i> Appartement activité , Salle
-              A12
+              <i class="fa-solid fa-map-pin"></i> {{ animation.lien.batiment }} , {{ animation.lien.numSalle }} 
             </p>
 
-            <p class="description"><strong>Date Debut :</strong> 03/06/2024</p>
+            <p class="description"><strong>Date Debut :</strong> {{ animation.dateDebut }} </p>
             <p class="description fin">
-              <strong>Date Fin :</strong> 11/08/2024
+              <strong>Date Fin :</strong> {{ animation.dateFin }} 
             </p>
             <hr />
-            <div class="text-center">
-              <a class="read-more d-inline-block align-items-center" href="#">
+            <p class="description"><strong>nombre min :</strong> {{ animation.nombreMin }} </p>
+            <p class="description"><strong>nombre max :</strong> {{ animation.nombreMax }} </p>
+            <hr />
+
+            <div *ngIf="!isAlreadyReserved(animation.id)" class="text-center" >
+              <a class="read-more d-inline-block align-items-center" (click)="addAnimationToCompte(animation.id)">
                 <span> S'inscrire </span>
               </a>
             </div>
           </div>
         </div>
+
       </div>
       <!-- End Course Item-->
 
