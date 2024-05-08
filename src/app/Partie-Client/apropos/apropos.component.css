@@ -1,0 +1,41 @@
+.details{
+    margin-top: 4%;
+    padding: 30px;
+}
+
+.img-fluid{
+    border-radius: 20px;
+}
+/*--------------------------------------------------------------
+# Details
+--------------------------------------------------------------*/
+.details .content+.content {
+    margin-top: 100px;
+}
+
+.details .content h3 {
+    font-weight: 700;
+    font-size: 32px;
+    color: #4677ea;
+}
+
+.details .content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.details .content ul li {
+    padding-bottom: 10px;
+}
+
+.details .content ul i {
+    font-size: 24px;
+    padding-right: 2px;
+    color: #5777ba;
+    line-height: 0;
+}
+
+.details .content p:last-child {
+    margin-bottom: 0;
+}
+
